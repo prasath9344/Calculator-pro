@@ -1,11 +1,11 @@
-name: Deploy calculator-api Docker App to AWS EC2
+name: Deploy calculator-pro Docker App to AWS EC2
 
 on:
   workflow_dispatch:
     inputs:
       name:
-        description: "Deploy the calculator-api from test"
-        default: "test"
+        description: "Deploy the calculator-api from dev"
+        default: "dev"
 
 permissions:
   id-token: write
@@ -14,15 +14,15 @@ permissions:
 env:
   AWS_REGION: us-east-1
   ECR_REPOSITORY: calculator-repo
-  CONTAINER_NAME: calculator-container
+  CONTAINER_NAME: calculator-cont
   INSTANCE_TYPE: t2.micro
   AMI_ID: ami-0c398cb65a93047f2
   KEY_NAME: calsi-key
-  INSTANCE_NAME: ec2-server-16.12.2025
-  SECURITY_GROUP_NAME: launch-wizard-2
-  SECURITY_GROUP_DESCRIPTION: "launch-wizard-2 created via GitHub Actions"
+  INSTANCE_NAME: calculator-pro
+  SECURITY_GROUP_NAME: launch-wizard-5
+  SECURITY_GROUP_DESCRIPTION: "launch-wizard-5 created via GitHub Actions"
   VPC_ID: vpc-0d1bf1da3a43aa0bd
-  EIP_ALLOCATION_ID: eipalloc-0fa3a0c4588c0e2c9
+  EIP_ALLOCATION_ID: eipalloc-0fa5b0c64b8b43aad
   ECR_ROLE_NAME: ec2-ecr-access-role 
 
 jobs:
